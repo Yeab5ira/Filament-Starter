@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Mchev\Banhammer\Models\Ban;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
 class UserResource extends Resource
@@ -80,7 +81,7 @@ class UserResource extends Resource
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 BanAction::make()
-                ->visible(fn($record) => !$record->isBanned())
+                ->visible(fn($record) => !$record->isBanned() && Auth::user()->can('create', Ban::class))
                 ->after(function (User $record) {
                     $record->notify(
                         Notification::make()
@@ -94,7 +95,7 @@ class UserResource extends Resource
                     );
                 }),
                 ActionsUnbanAction::make()
-                ->visible(fn($record) => $record->isBanned())
+                ->visible(fn($record) => $record->isBanned() && Auth::user()->can('create', Ban::class))
                 ->after(function (User $record) {
                     $record->notify(
                         Notification::make()
