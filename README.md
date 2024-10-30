@@ -12,32 +12,36 @@ Ensure you have the following installed on your machine:
 
 ## Installation Steps
 
-Clone the repository:
-``` git clone https://github.com/Yeab5ira/Filament-Starter.git ```
-``` cd Filament-Starter ```
+* Clone the repository:  
 
-Install PHP dependencies: Run the following command to install all required PHP packages via Composer:
-``` composer install ```
+  ``` git clone https://github.com/Yeab5ira/Filament-Starter.git ```  
+``` cd Filament-Starter ```  
 
-Install JavaScript dependencies: Use npm to install the necessary JavaScript dependencies:
-``` npm install ```
+* Install PHP dependencies:  
+Run the following command to install all required PHP packages via Composer:
 
-Set up the .env file:
+  ``` composer install ```
 
-Copy the .env.example file to create a .env file:
+* Install JavaScript dependencies: Use npm to install the necessary JavaScript dependencies:  
+
+   ``` npm install ```
+
+* Set up the .env file:
+
+  Copy the .env.example file to create a .env file:
 ``` cp .env.example .env ```
 
-Open .env and configure the following database and other settings:
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_database_user
-DB_PASSWORD=your_database_password
-```
+  Open .env and configure the following database and other settings:
+  ```
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=your_database_name
+  DB_USERNAME=your_database_user
+  DB_PASSWORD=your_database_password  
+  ```
 
-Generate the application key:
+* Generate the application key:
 ``` php artisan key:generate ```
 
 ### Run migrations and seed the database:
@@ -47,14 +51,8 @@ Generate the application key:
 * Install Shield 
 ``` php artisan shield:install --fresh``` 
 
-
-* Compile frontend assets: Use the following command to compile and bundle JavaScript and CSS assets:
-``` npm run dev ```
-
 * Start the development server: Run this command to start the Laravel development server:
 ``` php artisan serve ```
-
-Your application should now be accessible at http://localhost:8000.
 
 ## Documentation
 ### How to make a model auditable?
