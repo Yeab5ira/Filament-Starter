@@ -40,19 +40,18 @@ DB_PASSWORD=your_database_password
 Generate the application key:
 ``` php artisan key:generate ```
 
-Run migrations and seed the database:
+### Run migrations and seed the database:
 
-Run migrations to create the necessary tables:
+* Run migrations to create the necessary tables:
 ``` php artisan migrate ```
-Create an admin account
-``` php artisan make:filament-user ```
-Optionally, seed the database to populate it with initial data:
-``` php artisan db:seed ```
+* Install Shield 
+``` php artisan shield:install --fresh``` 
 
-Compile frontend assets: Use the following command to compile and bundle JavaScript and CSS assets:
+
+* Compile frontend assets: Use the following command to compile and bundle JavaScript and CSS assets:
 ``` npm run dev ```
 
-Start the development server: Run this command to start the Laravel development server:
+* Start the development server: Run this command to start the Laravel development server:
 ``` php artisan serve ```
 
 Your application should now be accessible at http://localhost:8000.
