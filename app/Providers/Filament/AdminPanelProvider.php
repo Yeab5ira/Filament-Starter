@@ -29,7 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('2rem')
-            ->brandName('ZLD CMMS')
+            ->brandName('Filament Starter')
             ->colors([
                 'primary' => Color::Cyan,
             ])

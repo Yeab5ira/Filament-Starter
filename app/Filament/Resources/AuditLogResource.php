@@ -17,6 +17,7 @@ use App\Filament\Resources\AuditLogResource\Pages;
 class AuditLogResource extends Resource
 {
     protected static ?string $navigationIcon = 'heroicon-o-exclamation-triangle';
+    protected static ?string $navigationGroup = 'Admin';
 
     public static function getModel(): string
     {
